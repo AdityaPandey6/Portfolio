@@ -56,24 +56,25 @@ const AboutMe = () => {
   }, [showQuote, fullQuote]);
 
   return (
-    <div ref={containerRef} className='w-full h-screen flex justify-between overflow-hidden'>
+    <div ref={containerRef} className='w-full h-screen flex sm:flex-row flex-col justify-between sm:overflow-hidden'>
       {/* Sidebar */}
-      <div className='w-1/4 bg-myyellow animate-me'>
-        <div className='h-screen flex flex-col justify-between p-4'>
+      <div className='sm:w-1/4 w-full bg-myyellow animate-me'>
+        <div className='sm:h-screen h-96 flex flex-col justify-normal p-4'>
           <div className='group'>
             <img src="/Assests/Images/man.jpg" alt="" className='w-full h-64 object-cover object-top rounded-md group-hover:scale-105 transition-transform duration-300' />
           </div>
-          <pre className='text-lg italic text-center text-gray-900 leading-relaxed mb-40 whitespace-pre-wrap'>
-            {displayText}
-            <span className="blink-cursor">|</span>
+          {/* Typing animation only on desktop, plain text on mobile */}
+          <pre className='text-lg italic text-center text-gray-900 leading-relaxed mb-40 whitespace-pre-wrap sm:mt-32 pt-6'>
+            <span className="sm:hidden p-3 ">Code is like humor. When you have to explain it, it’s bad.</span>
+            <span className="hidden sm:inline">{displayText}<span className="blink-cursor">|</span></span>
           </pre>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className='w-3/4 bg-mygray flex flex-col justify-start items-center'>
-        <div className='mt-12 h-32 w-4/5 border-dashed border-2 border-gray-500 flex justify-center items-center animate-me'>
-          <h1 className='font-title text-8xl font-bold text-center'>ABOUT ME</h1>
+      <div className='sm:w-3/4 w-full bg-mygray flex flex-col justify-start items-center'>
+        <div className='sm:mt-12 mt-5 h-32 w-4/5 border-dashed border-2 border-gray-500 flex justify-center items-center animate-me'>
+          <h1 className='font-title sm:text-8xl text-5xl font-bold text-center'>ABOUT ME</h1>
         </div>
 
         <div className='mt-8 w-4/5 animate-me'>
@@ -86,11 +87,11 @@ const AboutMe = () => {
           </div>
         </div>
 
-        <div className='mt-8 flex justify-between items-center w-4/5 h-4/5 mb-8 animate-me'>
-          <div className='flex w-full'>
+        <div className='mt-8 flex sm:flex-row flex-col justify-between items-center w-4/5 h-4/5 mb-8 animate-me'>
+          <div className='flex sm:flex-row flex-col w-full'>
             <img src="/Assests/Images/info.png" alt="" className='w-full' />
             <div className='ml-4 w-full font-title'>
-              <h1 className='font-title text-2xl font-bold'>What I do?</h1>
+              <h1 className='font-title text-2xl font-bold sm:mt-0 mt-6'>What I do?</h1>
               <h1 className='mt-3 font-bold'>Graduation - <span className='text-black font-light'>Pursuing B.Tech in Computer Science from Graphic Era University.</span></h1>
               <h1 className='mt-3 font-bold'>Specialization - <span className='text-black font-light'>Specialization in Artificial Intelligence and Software Development</span></h1>
               <h1 className='mt-3 font-bold'>Good At - <span className='text-black font-light'>Problem Solving, Communication</span></h1>

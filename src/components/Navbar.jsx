@@ -35,12 +35,13 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <div className='absolute right-4 top-1/4 z-40 cursor-none'>
-      <ul className='h-80 w-12 flex flex-col bg-myyellow justify-evenly rounded-3xl items-center relative'>
+    <div className='sm:absolute fixed bottom-2 right-0
+     sm:right-4 sm:top-1/4 z-40 cursor-none '>
+      <ul className='sm:h-80 sm:w-12 w-screen flex sm:flex-col bg-myyellow justify-around rounded-3xl items-center relative'>
         {links.map((link, index) => (
           <React.Fragment key={index}>
-            <li className={(index === 0 ? 'pt-4 ' : '') + (index === links.length - 1 ? 'pb-4 ' : '') + 'group'}>
-              <Link to={link.to} className={"cursor-none transition-transform duration-300 group-hover:scale-125"}>
+            <li className={(index === 0 ? 'sm:pt-4 ' : '') + (index === links.length - 1 ? 'sm:pb-4 ' : '') + 'group'}>
+              <Link to={link.to} className={"cursor-none transition-transform duration-300 sm:group-hover:scale-125"}>
                 <img
                   ref={el => iconRefs.current[index] = el}
                   src={link.icon}
@@ -53,8 +54,8 @@ const Navbar = () => {
               <img
                 src="/Assests/Icons/line.png"
                 alt="line"
-                className="w-1 h-4 my-1"
-                style={{ marginLeft: 'auto', marginRight: 'auto' }}
+                className="sm:w-1 sm:h-4 sm:my-1 w-3 h-12
+                 "
               />
             )}
           </React.Fragment>
